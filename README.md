@@ -10,7 +10,20 @@
 > **This project is currently under active development and internal testing.**  
 > **The full source code will be released soon.**  
 > 
-> Pre-compiled standalone binaries for **Linux (x86_64)** and **Windows (x64)** are provided in this repository for early testing, performance benchmarking, and community evaluation.
+> Pre-compiled standalone binaries for **Linux (x86_64)** and **Windows (x64)** are provided directly below for testing, benchmarking, and community evaluation.
+
+---
+
+## ⚡ Direct Binary Downloads
+
+Pre-compiled standalone binary executables are available for direct 1-click download:
+
+| Platform | Component | Direct Download Link | Size | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| **Linux (x86_64)** | **Coordinator Server** | [⬇️ **`raven_mining_server`**](https://github.com/APS-PPR-2016/fgp-raven-miner/raw/main/bin/linux-x86_64/raven_mining_server) | ~915 KB | Standalone Linux coordinator server |
+| **Linux (x86_64)** | **Worker Client** | [⬇️ **`raven_mining_client`**](https://github.com/APS-PPR-2016/fgp-raven-miner/raw/main/bin/linux-x86_64/raven_mining_client) | ~413 KB | Standalone Linux GPU worker client |
+| **Windows (x64)** | **Coordinator Server** | [⬇️ **`raven_mining_server.exe`**](https://github.com/APS-PPR-2016/fgp-raven-miner/raw/main/bin/windows-x64/raven_mining_server.exe) | ~945 KB | Standalone Windows coordinator server |
+| **Windows (x64)** | **Worker Client** | [⬇️ **`raven_mining_client.exe`**](https://github.com/APS-PPR-2016/fgp-raven-miner/raw/main/bin/windows-x64/raven_mining_client.exe) | ~510 KB | Standalone Windows GPU worker client |
 
 ---
 
@@ -39,19 +52,6 @@ Unlike traditional monolithic miners, FGP Raven Miner separates mining operation
 
 ---
 
-## 📂 Executable Binaries
-
-Pre-compiled standalone binaries are available in the [`bin/`](./bin/) directory:
-
-| Platform | Component | Binary Path | Description |
-| :--- | :--- | :--- | :--- |
-| **Linux (x86_64)** | Coordinator Server | [`bin/linux-x86_64/raven_mining_server`](./bin/linux-x86_64/raven_mining_server) | Standalone Linux coordinator server |
-| **Linux (x86_64)** | Worker Client | [`bin/linux-x86_64/raven_mining_client`](./bin/linux-x86_64/raven_mining_client) | Standalone Linux GPU worker client |
-| **Windows (x64)** | Coordinator Server | [`bin/windows-x64/raven_mining_server.exe`](./bin/windows-x64/raven_mining_server.exe) | Standalone Windows coordinator server |
-| **Windows (x64)** | Worker Client | [`bin/windows-x64/raven_mining_client.exe`](./bin/windows-x64/raven_mining_client.exe) | Standalone Windows GPU worker client |
-
----
-
 ## 🚀 Quick Start Guide
 
 ### 1. Launch the Coordinator Server
@@ -60,7 +60,8 @@ Run the coordinator on your main machine or server:
 
 #### Linux:
 ```bash
-./bin/linux-x86_64/raven_mining_server \
+chmod +x raven_mining_server
+./raven_mining_server \
   --pool rvn.2miners.com:6060 \
   --wallet YOUR_RAVENCOIN_WALLET_ADDRESS \
   --worker rig1 \
@@ -69,7 +70,7 @@ Run the coordinator on your main machine or server:
 
 #### Windows:
 ```cmd
-bin\windows-x64\raven_mining_server.exe ^
+raven_mining_server.exe ^
   --pool rvn.2miners.com:6060 ^
   --wallet YOUR_RAVENCOIN_WALLET_ADDRESS ^
   --worker rig1 ^
@@ -86,7 +87,8 @@ Run the worker client on any machine equipped with NVIDIA GPUs:
 
 #### Linux:
 ```bash
-./bin/linux-x86_64/raven_mining_client \
+chmod +x raven_mining_client
+./raven_mining_client \
   --server 127.0.0.1:8088 \
   --http-server http://127.0.0.1:8080 \
   --wallet YOUR_RAVENCOIN_WALLET_ADDRESS \
@@ -96,7 +98,7 @@ Run the worker client on any machine equipped with NVIDIA GPUs:
 
 #### Windows:
 ```cmd
-bin\windows-x64\raven_mining_client.exe ^
+raven_mining_client.exe ^
   --server 127.0.0.1:8088 ^
   --http-server http://127.0.0.1:8080 ^
   --wallet YOUR_RAVENCOIN_WALLET_ADDRESS ^
